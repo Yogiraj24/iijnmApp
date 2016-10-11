@@ -1,0 +1,31 @@
+	
+ #rPanel .yui-resize-handle-br {
+      right:0;
+      bottom:0;
+      height: 8px;
+      width: 8px;
+      position:absolute;
+      
+  }
+  
+    #rPanel_c.hide-scrollbars .yui-resize .bd {
+      overflow: hidden;
+  }
+    #rPanel_c.show-scrollbars .yui-resize .bd {
+      overflow: auto;
+  }
+  /*
+      PLEASE NOTE: It is necessary to set the "overflow" property of
+      the underlay element to "visible" in order for the
+      scrollbars on the body of a Resizable Panel instance to be
+      visible.  By default the "overflow" property of the underlay
+      element is set to "auto" when a Panel is made visible on
+      Gecko for Mac OS X to prevent scrollbars from poking through
+      it on that browser + platform combintation.  For more
+      information on this issue, read the comments in the
+      "container-core.css" file.
+  */
+  #rPanel_c.show-scrollbars .underlay {
+      overflow: visible;
+  }
+	

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+"-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+"http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+
+<tiles-definitions>
+    <definition name="Tiles.MainDef" page="/jsp/common/template.jsp">
+        <put name="title" type="string" value="Welcome" />
+        <put name="header" value="/jsp/common/top.jsp" />
+        <put name="left" value="/jsp/common/left.jsp" />
+        <put name="body" value="/jsp/common/content.jsp" />
+        <put name="right" value="/jsp/common/right.jsp" />
+        <put name="bottom" value="/jsp/common/bottom.jsp" /> 
+    </definition>
+
+    <definition name="Tiles.ShowSession" extends="Tiles.MainDef">
+        <put name="body" value="/jsp/showSession.jsp" />
+        <put name="title" type="string" value="Session Data" />
+    </definition>
+    <definition name="Tiles.DataError" extends="Tiles.MainDef">
+        <put name="body" value="/jsp/common/dataError.jsp" />
+        <put name="title" type="string" value="Data Error" />
+    </definition>
+    <definition name="Tiles.Download" extends="Tiles.MainDef">
+        <put name="body" value="/jsp/download/Download.jsp" />
+        <put name="title" type="string" value="Documents" />
+    </definition>
+    
+	<definition name="Tiles.techError" extends="Tiles.MainDef">
+		<put name="body" value="/jsp/common/technicalError.jsp" /> 
+		<put name="title" type="string" value="Technical Error"/>
+    </definition> 
+    
+</tiles-definitions>
+

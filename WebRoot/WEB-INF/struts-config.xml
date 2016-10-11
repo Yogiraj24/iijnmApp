@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+	<form-beans>
+		<form-bean name="loginForm" type="com.hp.supplier.form.LoginForm"></form-bean>
+		<form-bean name="supplierForm" type="com.hp.supplier.form.SupplierForm"></form-bean>
+		<form-bean name="submissionForm" type="com.hp.supplier.form.SubmissionForm1"></form-bean>
+		<form-bean name="businessInfoForm" type="com.hp.supplier.form.BusinessInfoForm"></form-bean>
+		<form-bean name="typesOfBusinessForm" type="com.hp.supplier.form.TypesOfBusinessForm"></form-bean>
+		<form-bean name="contactsReferencesForm"
+			type="com.hp.supplier.form.ContactsReferencesForm"></form-bean>
+		<form-bean name="marketsForm" type="com.hp.supplier.form.MarketInfoForm"></form-bean>
+		<form-bean name="opportunitiesInfoForm" type="com.hp.supplier.form.OpportunitiesInfoForm"></form-bean>
+		<form-bean name="companyInfoForm" type="com.hp.supplier.form.CompanyInfoForm"></form-bean>
+		<form-bean name="trandingActivitiesForm" type="com.hp.supplier.form.TrandingActivitiesForm"></form-bean>
+		<form-bean name="offeringsSubmissionForm" type="com.hp.supplier.form.OfferingsSubmissionForm"></form-bean>
+		<form-bean name="techCapabilitySubmissionForm" type="com.hp.supplier.form.TechCapabilitySubmissionForm"></form-bean>
+		<form-bean name="marketSubmissionForm" type="com.hp.supplier.form.MarketSubmissionForm"></form-bean>
+		<form-bean name="historySubmissionForm" type="com.hp.supplier.form.HistorySubmissionForm"></form-bean>
+
+	</form-beans>
+	<global-exceptions />
+	<global-forwards>
+	</global-forwards>
+	<action-mappings>
+		<action path="/companyInfoSubmission" type="com.hp.supplier.action.CompanyInfoView"
+			name="companyInfoForm" scope="request" validate="false">
+			<forward name="success" path="Tiles.CompanyInfoView"></forward>
+			<forward name="failure" path="Tiles.CompanyInfoView"></forward>
+		</action>
+		<action path="/tradingActivitiesSubmission" type="com.hp.supplier.action.TradingActivityView"
+			name="trandingActivitiesForm" scope="request" validate="false">
+			<forward name="success" path="Tiles.TradingActivityView"></forward>
+			<forward name="failure" path="Tiles.TradingActivityView"></forward>
+		</action>
+		<action path="/offeringsSubmission" type="com.hp.supplier.action.OfferingsSubmissionView"
+			name="offeringsSubmissionForm" scope="request" validate="false">
+			<forward name="success" path="Tiles.OfferingView"></forward>
+			<forward name="failure" path="Tiles.OfferingView"></forward>
+		</action>
+		<action path="/techCapabilitySubmission" type="com.hp.supplier.action.TechCapabilitySubmissionView"
+			name="techCapabilitySubmissionForm" scope="request" validate="false">
+			<forward name="success" path="Tiles.TechCapabilitiesView"></forward>
+			<forward name="failure" path="Tiles.TechCapabilitiesView"></forward>
+		</action>
+		<action path="/marketSubmission" type="com.hp.supplier.action.MarketSubmissionView"
+			name="marketSubmissionForm" scope="request" validate="false">
+			<forward name="success" path="Tiles.MarketIndustriesView"></forward>
+			<forward name="failure" path="Tiles.MarketIndustriesView"></forward>
+		</action>
+		<action path="/historySubmission" type="com.hp.supplier.action.HistorySubmissionView"
+			name="historySubmissionForm" scope="request" validate="false">
+			<forward name="success" path="Tiles.HistoryView"></forward>
+			<forward name="failure" path="Tiles.HistoryView"></forward>
+		</action>
+				
+		
+		
+		<action path="/login" type="com.hp.supplier.action.LoginAction"
+			name="loginForm" scope="request" validate="false">
+			<forward name="success" path="Tiles.Welcome"></forward>
+			<forward name="failure" path="Tiles.Welcome"></forward>
+		</action>
+		<action path="/supplier" type="com.hp.supplier.action.SupplierViewAction"
+			name="supplierForm" scope="request" validate="false">
+			<forward name="success" path="Tiles.SupplierView"></forward>
+		</action>
+		<action path="/saveSupplier" type="com.hp.supplier.action.SaveSupplierDetailsAction"
+			name="supplierForm" scope="request" validate="false">
+			<forward name="success" path="Tiles.SearchSupplierViewDisplay" />
+			<forward name="failure" path="Tiles.SupplierView" />
+		</action>
+		<action path="/searchSupplierView"
+			type="com.hp.supplier.action.SearchSupplierDetailsViewAction" name="submissionForm"
+			scope="request" validate="false">
+			<forward name="success" path="Tiles.SearchSupplierView" />
+		</action>
+		<action path="/searchSupplier"
+			type="com.hp.supplier.action.SearchSupplierDetailsAction" name="submissionForm"
+			scope="request" validate="false">
+			<forward name="success" path="Tiles.SearchSupplierView" />
+			<forward name="failure" path="Tiles.SearchSupplierView" />
+		</action>
+		<action path="/introductionView" type="com.hp.supplier.action.IntroductionViewAction"
+			name="supplierForm" scope="request" validate="false">
+			<forward name="success" path="Tiles.IntroductionView" />
+		</action>
+		<action path="/submission" type="com.hp.supplier.action.SubmissionViewAction"
+			name="submissionForm" scope="request" validate="false">
+			<forward name="success" path="Tiles.SubmissionView" />
+		</action>
+		<action path="/businessInfo" type="com.hp.supplier.action.BusinessInfoViewAction"
+			name="businessInfoForm" scope="request" validate="false">
+			<forward name="success" path="Tiles.BusinessInfoView" />
+		</action>
+		<action path="/typesOfBusiness" type="com.hp.supplier.action.BusinessInfoViewAction"
+			name="typesOfBusinessForm" scope="request" validate="false">
+			<forward name="success" path="Tiles.TypesOfBusinessView" />
+		</action>
+		<action path="/contactReferences" type="com.hp.supplier.action.BusinessInfoViewAction"
+			name="contactsReferencesForm" scope="request" validate="false">
+			<forward name="success" path="Tiles.ContactReferences" />
+		</action>
+		<action path="/marketsView" type="com.hp.supplier.action.MarketsViewAction"
+			name="marketsForm" scope="request" validate="false">
+			<forward name="success" path="Tiles.MarketInfo" />
+		</action>
+		<action path="/opportunitiesInfo" type="com.hp.supplier.action.OpportunitiesViewAction"
+			name="opportunitiesInfoForm" scope="request" validate="false">
+			<forward name="success" path="Tiles.OpportunitiesInfo" />
+		</action>
+
+		<!-- Submit Action -->
+		<action path="/accept" type="com.hp.supplier.action.SubmissionViewAction"
+			name="submissionForm" scope="request" validate="false">
+			<forward name="success" path="/submission.do" />
+		</action>
+
+		<action path="/submissionAction" type="com.hp.supplier.action.SubmissionAction"
+			name="submissionForm" scope="request" validate="false">
+			<forward name="success" path="Tiles.BusinessInfoView" />
+		</action>
+
+		<action path="/bizInfoAction" type="com.hp.supplier.action.BizInfoSubmitAction"
+			name="businessInfoForm" scope="request" validate="false">
+			<forward name="success" path="Tiles.TypesOfBusinessView" />
+		</action>
+		<!-- <action path="/typesOfBizAction" type="com.hp.supplier.action.BizTypeInfoSubmitAction" 
+			name="typesOfBusinessForm" scope="request" validate="false"> <forward name="success" 
+			path="Tiles.BusinessInfoView" /> </action> -->
+		<action path="/productServices" type="com.hp.supplier.action.BizTypeInfoSubmitAction"
+			name="typesOfBusinessForm" scope="request" validate="false">
+			<forward name="success" path="Tiles.OpportunitiesInfo" />
+		</action>
+
+		<action path="/opportunitiesInfoSubmit" type="com.hp.supplier.action.OpportunitiesSubmitAction"
+			name="opportunitiesInfoForm" scope="request" validate="false">
+			<forward name="success" path="/marketsView.do" />
+		</action>
+
+		<action path="/marketsInfoSubmit" type="com.hp.supplier.action.MarketsInfoSubmitAction"
+			name="marketsForm" scope="request" validate="false">
+			<forward name="success" path="/contactReferences.do" />
+		</action>
+
+		<action path="/contactReferencesInfoSubmit"
+			type="com.hp.supplier.action.ContactsReferencesInfoSubmitAction"
+			name="contactsReferencesForm" scope="request" validate="false">
+			<forward name="success" path="Tiles.SuccessMessage" />
+		</action>
+
+	</action-mappings>
+
+
+
+	<controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"
+		bufferSize="4096" />
+	<message-resources parameter="com.hp.struts.ApplicationResources"
+		null="false" />
+
+
+
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config"
+			value="/WEB-INF/tiles-defs.xml,
+			/WEB-INF/tiles/officeadmin.xml" />
+	</plug-in>
+</struts-config>
+

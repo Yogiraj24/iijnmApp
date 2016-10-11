@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+"-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+"http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+
+<tiles-definitions>
+
+	<definition name="Tiles.Welcome" extends="Tiles.MainDef">
+		<put name="body" value="/jsp/common/Welcome.jsp" />
+		<put name="title" type="string" value="Welcome Administrator" />
+	</definition>
+	<definition name="Tiles.SupplierView" extends="Tiles.MainDef">
+		<put name="body" value="/jsp/officeadmin/supplierView.jsp"></put>
+		<put name="title" type="string" value="Enter Supplier Details"></put>
+	</definition>
+	<definition name="Tiles.SearchSupplierView" extends="Tiles.MainDef">
+		<put name="body" value="/jsp/officeadmin/searchSupplierView.jsp"></put>
+		<put name="title" type="string" value="Search Supplier Details"></put>
+	</definition>
+	<definition name="Tiles.SearchSupplierViewDisplay" extends="Tiles.MainDef">
+		<put name="body" value="/jsp/officeadmin/supplierViewDisplay.jsp"></put>
+		<put name="title" type="string" value="Search Supplier Details"></put>
+	</definition>
+	<definition name="Tiles.IntroductionView" extends="Tiles.MainDef">
+		<put name="body" value="/jsp/officeadmin/introduction.jsp"></put>
+		<put name="title" type="string" value="Introduction"></put>
+	</definition>
+	<definition name="Tiles.SubmissionView" extends="Tiles.MainDef">
+		<put name="body" value="/jsp/officeadmin/submissionView.jsp"></put>
+		<put name="title" type="string" value="Submission Form"></put>
+	</definition>
+	<definition name="Tiles.BusinessInfoView" extends="Tiles.MainDef">
+		<put name="body" value="/jsp/officeadmin/businessInformation.jsp"></put>
+		<put name="title" type="string" value="Business Information"></put>
+	</definition>
+	<definition name="Tiles.TypesOfBusinessView" extends="Tiles.MainDef">
+		<put name="body" value="/jsp/officeadmin/productsServices.jsp"></put>
+		<put name="title" type="string" value="Products and Information"></put>
+	</definition>
+	<definition name="Tiles.ContactReferences" extends="Tiles.MainDef">
+		<put name="body" value="/jsp/officeadmin/contactRef.jsp"></put>
+		<put name="title" type="string" value="Contacts and References"></put>
+	</definition>
+	<definition name="Tiles.MarketInfo" extends="Tiles.MainDef">
+		<put name="body" value="/jsp/officeadmin/markets_info.jsp"></put>
+		<put name="title" type="string" value="Market Info"></put>
+	</definition>
+	<definition name="Tiles.OpportunitiesInfo" extends="Tiles.MainDef">
+		<put name="body" value="/jsp/officeadmin/opportunitiesInfo.jsp"></put>
+		<put name="title" type="string" value="Opportunities Info"></put>
+	</definition>
+	<definition name="Tiles.SuccessMessage" extends="Tiles.MainDef">
+		<put name="body" value="/jsp/officeadmin/success_message.jsp"></put>
+		<put name="title" type="string" value="Information Sumitted"></put>
+	</definition>
+	
+	<definition name="Tiles.CompanyInfoView" extends="Tiles.MainDef">
+		<put name="body" value="/jsp/officeadmin/companyInfo.jsp"></put>
+		<put name="title" type="string" value="Company Information"></put>
+	</definition>
+	
+	<definition name="Tiles.TradingActivityView" extends="Tiles.MainDef">
+		<put name="body" value="/jsp/officeadmin/tradingActivities.jsp"></put>
+		<put name="title" type="string" value="Trading Activities"></put>
+	</definition>
+	
+	<definition name="Tiles.OfferingView" extends="Tiles.MainDef">
+		<put name="body" value="/jsp/officeadmin/offerings.jsp"></put>
+		<put name="title" type="string" value="Offerings to HP"></put>
+	</definition>
+	
+	<definition name="Tiles.TechCapabilitiesView" extends="Tiles.MainDef">
+		<put name="body" value="/jsp/officeadmin/techCapability.jsp"></put>
+		<put name="title" type="string" value="Technical Capabilities"></put>
+	</definition>
+	
+	<definition name="Tiles.MarketIndustriesView" extends="Tiles.MainDef">
+		<put name="body" value="/jsp/officeadmin/marketsIndustries.jsp"></put>
+		<put name="title" type="string" value="Market Industries Served"></put>
+	</definition>
+	
+	<definition name="Tiles.HistoryView" extends="Tiles.MainDef">
+		<put name="body" value="/jsp/officeadmin/companyHistory.jsp"></put>
+		<put name="title" type="string" value="Market Industries Served"></put>
+	</definition>
+	
+</tiles-definitions>

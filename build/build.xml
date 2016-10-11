@@ -1,0 +1,165 @@
+<project name="Supplier Platform" default="war" basedir="./../">
+  <target name="init">
+    <tstamp />  
+    <property environment="env"/>	
+	<condition property="ext" value="bat" >
+		<os family="windows"/>	
+	</condition>	
+    <property name="webapp.name" value="IIJNMApp" />
+    <property name="build" value="build" />
+    <property name="uki.dist" value="${basedir}/dist/${webapp.name}" />
+    <property name="uki.webapp" value="${uki.dist}/WEB-INF" />
+    <property name="uki.src" value="${uki.dist}/src" />
+    <property name="uki.images" value="${uki.dist}/images" />
+    <property name="uki.javascript" value="${uki.dist}/javascript" />
+    <property name="uki.css" value="${uki.dist}/css" />
+    <property name="uki.jsp" value="${uki.dist}/jsp" />
+    <property name="uki.conf" value="${uki.dist}/conf" />
+    <property name="uki.axis2-web" value="${uki.dist}/axis2-web" />
+    <property name="uki.excel" value="${uki.dist}/excel" />
+    <property name="uki.help" value="${uki.dist}/help-docs" />
+  	<property name="uki.report" value="${uki.dist}/report" />
+    <property name="uki.lib" value="${uki.webapp}/lib" />
+    <property name="uki.class" value="${uki.webapp}/classes" />
+    
+    <property name="uki.webapp.webroot.module" value="${basedir}/WebRoot" />
+    <property name="uki.webapp.src.module" value="src" />
+	<property name="catalina.home" value="${env.APAHCHE_HOME}"/>
+    <property name="tomcat.lib" value="./${build}/lib/tomcat-6.lib" />
+  </target>
+
+
+  <target name="clean" depends="init">
+    <delete dir="${uki.dist}/" />
+  </target>
+  
+  <path id="uki.classpath">
+    <fileset dir="${uki.lib}">
+      <include name="**/*.jar" />
+      <include name="**/*.zip" />
+    </fileset>
+  </path>
+  
+  <target name="mkdirs" depends="init" description="">
+    <mkdir dir="${uki.dist}" />
+    <mkdir dir="${uki.src}" />
+    <mkdir dir="${uki.webapp}" />    
+    <mkdir dir="${uki.images}" />
+    <mkdir dir="${uki.javascript}" />
+    <mkdir dir="${uki.css}" />
+    <mkdir dir="${uki.webapp.services}" />
+    <mkdir dir="${uki.axis2-web}" />
+    <mkdir dir="${uki.help}" />
+  	<mkdir dir="${uki.report}" />
+  </target>
+  
+  <target name="copysrc" depends="mkdirs" description="">
+    <delete dir="${uki.dist}/src" />
+    <copy todir="${uki.src}">
+    <fileset dir="${uki.webapp.src.module}" />
+    <fileset dir="${uki.report}" />	
+    </copy>
+  </target>
+
+  <target name="copyresources" depends="copysrc" description="">   
+       
+    <copy todir="${uki.images}">
+      <fileset dir="${uki.webapp.webroot.module}/images" />
+    </copy>
+
+    <copy todir="${uki.jsp}">
+      <fileset dir="${uki.webapp.webroot.module}/jsp" />
+    </copy>
+  	
+    <copy todir="${uki.report}">
+       <fileset dir="${uki.report}" />
+    </copy>
+  	
+    <copy todir="${uki.javascript}">
+      <fileset dir="${uki.webapp.webroot.module}/javascript" />
+    </copy>
+
+    <copy todir="${uki.css}">
+      <fileset dir="${uki.webapp.webroot.module}/css" />
+    </copy>
+
+    <copy todir="${uki.webapp}">
+      <fileset dir="${uki.webapp.webroot.module}/WEB-INF" />
+    </copy>
+    
+
+    
+	<delete dir="${uki.class}" />
+
+    <mkdir dir="${uki.class}" />
+	<copy todir="${uki.class}">
+      <fileset dir="src/com/hp/struts">
+		<exclude name="ApplicationResources.properties" />
+		<exclude name="ApplicationResources_swedish.properties" />
+     	<exclude name="app_config.properties" />
+		<exclude name="config.properties" />
+	  </fileset>
+    </copy>
+	<copy todir="${uki.class}/com/hp/struts">
+      <fileset dir="src/com/hp/struts">
+
+	  </fileset>
+    </copy>
+     
+    
+  </target>
+  
+  
+
+  <target name="compile" depends="copyresources"
+    description="compile the source ">
+
+    <echo message="Compiling the Java Source" />
+
+    <!-- Compile the java code from ${src} into ${build} -->
+    <javac srcdir="${uki.src}" destdir="${uki.class}" debug="on"
+      deprecation="off">
+      <classpath>
+        <fileset dir="${uki.lib}">
+          <include name="**/*.jar" />
+          <include name="**/*.zip" />
+        </fileset>
+        <fileset dir="${tomcat.lib}">
+          <include name="**/*.jar" />
+          <include name="**/*.zip" />
+        </fileset> 
+      </classpath>
+    </javac>
+
+  </target>
+
+  <target name="war" depends="compile">
+    <war warfile="${build}/${webapp.name}.war" webxml="${uki.webapp}/web.xml">
+      <fileset dir="${uki.dist}" />
+    </war>
+    <delete dir="${uki.dist}/" />
+    <copy file="${build}/${webapp.name}.war"
+      tofile="${build}/${webapp.name}-${DSTAMP}-${TSTAMP}.war" />
+  </target>
+
+
+  <target name="deploy" depends="tomcat-stop, war">
+    <delete file="${catalina.home}/webapps/${webapp.name}.war" />
+	<delete dir="${catalina.home}/webapps/${webapp.name}/" />
+	<copy file="${build}/${webapp.name}.war" tofile="${catalina.home}/webapps/${webapp.name}.war" />
+  <antcall target="tomcat-start"/>
+ </target>
+
+  <target name="tomcat-start" depends="war">
+	<exec executable="${catalina.home}/bin/startup.${ext}" />    
+  </target>
+
+  <target name="tomcat-stop" depends="war">
+    <exec executable="${catalina.home}/bin/shutdown.${ext}" />
+  </target>
+  
+
+  
+  
+  
+</project>

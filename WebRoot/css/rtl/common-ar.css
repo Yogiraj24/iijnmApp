@@ -1,0 +1,377 @@
+body{ color:#000; }
+body,div,ul,li,input,select,textarea,button,p,td{font-family:calibri,Verdana,Arial,sans-serif;font-size:12px;}
+a{ color: #000 }
+a:hover{ color: red }
+
+
+/*page layout*/
+body {
+	background: #fff;
+	margin: 0px;
+	padding: 0px;
+}
+
+#pageHeader{
+	background: #fff url(sh.gif) repeat-x right bottom;
+	margin:0px 0px;
+	position: relative;
+	padding: 10px 3px 19px 3px;
+	/*border-bottom: 1px solid #C9C9C7;*/
+}
+
+* html #pageHeader{ height: 1%; }/*IE fix*/
+
+#pageHeader .logo{
+	vertical-align:middle;
+	border: 0px;
+}
+
+#pageHeader .logoText1{
+	color: #0F0F0F;
+	font-weight:bold;
+	font-size: 24px;
+}
+
+#pageHeader .logoText2{
+	color: #DA0000;
+	font-weight:bold;
+	font-size: 24px;
+}
+
+#pageHeader .logout{
+	position: absolute;
+	top: 5px;
+	left:25px;
+	font-size: 12px;
+	font-weight: bold;	
+}
+
+#pageHeader .logout a{
+	color: #000;
+}
+
+#pageHeader .logout a:hover{
+	color: red;
+}
+
+#centerCol {
+	vertical-align: top;
+	padding: 0 20px;
+}
+#leftCol {
+	width: 150px; 
+	height:auto;
+	vertical-align: top;
+	background: #DA0000;
+	min-width:150px;
+	border: 1px solid #DA0000;
+	-moz-border-radius: 7px;
+	border-radius: 7px;	
+	min-height:490px;
+}
+#rightCol {
+	width: 140px; 
+	vertical-align: top;
+}
+#pageFooter {
+	margin-top:10px;
+	text-align: center;
+	color: gray;
+}
+
+/*page layout end*/
+
+
+/*left col content*/
+#leftCol #section1{
+	padding:1px;
+}
+
+.navLinks{list-style:none;margin:0 0 10px 0;padding:0}
+.navLinks li{ font-size: 90%; }
+.navLinksHeader{
+	font-size: 16px;
+	font-weight:bold;
+	color: #fff;
+	padding: 0px;
+	margin: 3px;
+}
+
+.navLinks a{ 
+	text-decoration:none; 
+	display:block; 	
+	height: 1%; /*ie fix*/
+	color: #fff; 
+	padding: 3px 10px 3px 2px;
+}
+.navLinks a:hover{ 
+	color: #fff;
+	background-color:#FC3333;
+}
+.navLinks a.currentPage{
+	background:#FC3333 url(ar/ar.gif) no-repeat right center;
+}
+
+
+.pageTitle{
+	padding:0px;
+	margin:0 0 10px 0;
+	font-size: 18px;
+	font-weight: bold;
+	
+	color: #333333;
+}
+
+/*forms*/
+form { padding: 0px; margin:0px; }
+
+.formContainer{
+	border: 1px solid #C7C5C4;
+	background-color: #F3F3F3;
+	margin-bottom: 0px;
+}
+
+.formContainer .submitRow{
+	text-align: center;
+}
+
+input, textarea{
+	border: 1px solid #999999;
+}
+
+.pushButton, .pushButton button, .pushButton input, .pushButton a{
+	display: -moz-inline-box;
+	display: inline-block;
+	font-weight:bold;
+	height: 18px;	
+	vertical-align:middle;
+}
+
+.pushButton{
+	background: #FF0000 url(btn-lt.gif) left bottom no-repeat;
+	margin-right: 7px;	
+}
+
+.pushButton button, .pushButton input, .pushButton a{
+	background:url(btn-rt.gif) right bottom no-repeat;
+	color: #fff;
+	font-size: 12px;	
+	border: 0;	
+	line-height: 18px;
+	padding: 0px 5px;
+}
+
+.pushButton a{
+	text-decoration: none;
+}
+
+
+.submitRow{
+	padding-top: 10px;
+}
+
+.formBtn{
+	display: inline-block;
+	padding: 2px 20px 2px 2px;
+	background: url(minus.gif) no-repeat right center;
+	cursor: pointer;
+}
+
+.chkboxTable td{vertical-align:top; padding-left: 3px;}
+
+.chkboxTable label{
+	display: block;
+	margin: -1.4em 2em 0 0;
+}
+
+/*report*/
+.reportContainer{
+	margin-top: 20px;
+	float: right; /*req to shrink the container to the width of the content*/
+}
+
+.reportActions{
+	margin-bottom: 2px;
+	text-align:left;
+}
+
+.reportButtons { float:right; }
+.reportPagination{  }
+
+.reportPagination a{
+	display: -moz-inline-box;
+	display: inline-block;
+	text-decoration:none;
+	color: #333;
+	padding: 2px 3px;
+}
+
+.reportPagination a:hover{
+	color: red;
+}
+
+.reportPagination a.currentPage{
+	color:red;
+}
+
+.reportPagination img{
+	border: none;
+	vertical-align: middle;
+}
+
+
+.report {
+	border: 1px solid #C30000; 
+	background: #CCC;
+}
+.report th{
+	background:#DB0909 url(report-h.gif) repeat-x right top;
+	color: #fff;
+	font-weight:bold;
+	border-bottom: 1px solid #000;
+	border-top: 1px solid #fff;
+}
+
+.report .row1 td{
+	background: #fff;
+}
+
+.report .row2 td{
+	background: #F2F2F2;
+}
+
+.report td{
+	padding: 2px 5px;
+}
+
+.report .lt{
+	text-align: right;
+}
+.report .rt{
+	text-align: left;
+}
+.report .cn{
+	text-align: center;
+}
+
+.report .actions{
+	width: 70px;
+	white-space: nowrap;
+}
+
+.report .actions img, .report .actions input, .report .actionsHdr input{
+	border: none;
+	vertical-align: middle;
+}
+
+.report .actionsHdr{
+	text-align: right;
+}
+
+.report a.sortable{
+	text-decoration: none;
+	color: #fff;
+}
+
+.report a.asc{
+	padding-right: 20px;
+	background: url(up_white.gif) no-repeat 2px 2px;
+}
+
+.report a.desc{
+	padding-right: 20px;
+	background: url(down_white.gif) no-repeat 2px 2px;
+}
+
+/*report end*/
+
+
+.notes{ color: gray; }
+.error{ color: red; }
+
+
+/*user selection*/
+.movableSelectionContainer{
+	height: 250px;
+	padding: 3px 1px 1px;
+	overflow:auto;
+	border-top: 1px solid black;
+}
+
+.movableSelectionContainer .movable{
+
+	margin-bottom: 2px;
+	background: #fff;
+	border: 1px solid gray;
+	white-space: nowrap;
+	
+	overflow: hidden;
+	xwidth: 90%;
+}
+
+.movableSelectionContainer .movable .img{
+	border-left: 1px solid gray;
+	cursor: pointer;
+	background: #e5e5e5;
+	padding: 2px;
+	
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.movableSelectionContainer .movable .imgCont{
+	border-left: 1px solid gray;
+	cursor: pointer;
+	background: #e5e5e5;
+	padding: 2px;
+}
+
+.movableSelectionContainer .movable .txtCont{
+	width: 150px;
+	white-space: normal;
+}
+
+.movableSelectionContainer .movable .chkCont{
+	text-align: left;
+	color: gray;
+	white-space: nowrap;
+}
+
+.movableSelectionContainer .movable .chkCont input{
+	border: none;
+	vertical-align: middle;
+}
+
+.available .chkCont{
+	display:none;
+}
+
+
+
+
+
+.contentBox{
+	border: 1px solid red;
+	padding: 1px;
+	margin-bottom: 15px;
+}
+
+.contentBox .hd{
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 20px;
+	padding:2px;
+	margin:0px;
+	background: red;
+	color: white;
+}
+
+.contentBox .bd{
+	padding: 2px;
+	min-height: 140px;
+	overflow: auto;
+}
+
+* html .contentBox .bd{
+	height: 140px;
+}
